@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    padding: 0.56rem 0.2rem;
+    background-color: #222;
+    color: #eee;
+}
+
+header h1 {
+    text-align: center;
+}
+
+main {
+    height: 100vh;
+    background-color: #262626;
+
+    padding: 1rem;
+    color: white;
+}
+
+main p {
+    color: red;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 26pt;
+}
+
+main p > span {
+    margin-right: 12px;
+
+    color: white;
+    font-weight: bolder;
+}
+
+main p > strong {
+    color: whitesmoke;
+}
+
+.btn {
+    width: 40%;
+    padding: 0.5rem 0.45rem;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 2px solid red;
+    font-size: 1rem;
+    font-weight: 600;
+    color: red;
+    background: transparent;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-ai-c {
+    align-items: center;
+}
+
+.flex-sb {
+    justify-content: space-between;
+}
+
+.flex-gap-pall {
+    gap: 1.1rem;
+    padding: 2rem 1rem;
+}
+
+#form-ex02 div > label {
+    font-size: 1.2rem;
+    color: red;
+}
+
+#form-ex02 div > label > strong {
+    color: white;
+}
+
+#form-ex02 div > input {
+    height: 24px;
+    padding: 6px 6px;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+#form-ex02 div > input:not(:first-child) {
+    margin-top: 12px;
+}
+
+.results {
+    margin: 2rem 1.5rem;
+}

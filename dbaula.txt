@@ -1,0 +1,16 @@
+-- Criação do banco dbaula
+
+-- CREATE SCHEMA `dbaula` DEFAULT CHARACTER SET utf8;
+
+use dbaula;
+
+CREATE TABLE tbpessoa(
+	idpessoa INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL,
+    tel VARCHAR(10) NOT NULL,
+    email VARCHAR(50)
+);
+
+INSERT INTO tbpessoa(nome, tel, email) VALUES ("Godofredo", 12434-5645, "godofredo@gmail.com");
+
+SELECT * FROM tbpessoa;

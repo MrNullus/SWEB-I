@@ -1,0 +1,12 @@
++ O que é?
+Fazer um BD para o petshop, aonde vai ser armazenado, nome, a especie e a raça
+
+DB := petshop
+
+-> raça -> id
+| Pet | -> nome
+-> especie 
+
++ Actions
+Cadastrar pet
+Consultar bd
