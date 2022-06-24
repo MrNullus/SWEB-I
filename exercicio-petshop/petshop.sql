@@ -1,12 +1,12 @@
-CREATE SCHEMA `petshop` DEFAULT CHARACTER SET utf8;
+CREATE SCHEMA `projeto_petshop` DEFAULT CHARACTER SET utf8;
 
-USE petshop;
+USE projeto_petshop;
 
-CREATE TABLE petshop (
+CREATE TABLE pet (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(45) NOT NULL,
     especie VARCHAR(55) NOT NULL,
     raca VARCHAR(55) NOT NULL
 );
 
-SELECT * FROM petshop ORDER BY nome;
+SELECT * FROM pet ORDER BY nome;

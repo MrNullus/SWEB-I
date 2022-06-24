@@ -35,7 +35,7 @@ while ($row = $consulta->fetch_assoc()) {
 while ($row = $consulta->fetch_assoc()) {
     print_r($row);
 }
-*/while($row =$consulta->fetch_assoc()) {
+*/while($row = $consulta->fetch_assoc()) {
     echo json_encode($row)."<br>";
 }
 
