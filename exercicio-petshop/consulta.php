@@ -56,6 +56,7 @@ $query = $conn->query("SELECT nome, especie, raca FROM pet ORDER BY nome");
 		// setando aviso
 		$WARNNING = "<span style='color: #A37E5A;font-size:1.2rem''>Não há pets cadastrados... 🐈</span>";
 		echo $WARNNING;	
+		echo "<img src='anime-cat.gif' alt='Cat Gif' />";
 	} ?>
 	
 </div>

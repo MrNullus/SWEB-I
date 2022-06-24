@@ -66,6 +66,8 @@ if (isset($_POST['nome_pet']) && !empty($_POST['nome_pet'])) {
 <?php  
 if (empty($ERROR)) {
     echo $SUCCESS;  
+    echo "<br><br>";
+    echo "<img src='dancinganime-anime.gif' alt='Dancing Game Anime' width='160px'/>";
 } else {
     echo $ERROR;
 }
