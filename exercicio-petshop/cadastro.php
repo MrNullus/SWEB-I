@@ -36,7 +36,8 @@ if (isset($_POST['nome_pet']) && !empty($_POST['nome_pet'])) {
 
     <h2>Cadastrar Pet🐶</h2>
 
-    [<a href="consulta.php">consultar🔍</a>]
+    [<a href="index.html">Home🏠</a>]
+    [<a href="consulta.php">Consultar🔍</a>]
     [<a href="cadastro.php">Cadastrar✅</a>]
 </div>
 <br>
@@ -67,7 +68,7 @@ if (isset($_POST['nome_pet']) && !empty($_POST['nome_pet'])) {
 if (empty($ERROR)) {
     echo $SUCCESS;  
     echo "<br><br>";
-    echo "<img src='dancinganime-anime.gif' alt='Dancing Game Anime' width='160px'/>";
+    echo "<img src='./public/image/dancinganime-anime.gif' alt='Dancing Game Anime' width='160px'/>";
 } else {
     echo $ERROR;
 }

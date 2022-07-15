@@ -11,8 +11,19 @@ if ($conn->connect_error) {
     echo $ERROR;
 }
 
-// buscando os dados
-$query = $conn->query("SELECT id, nome, especie, raca FROM pet ORDER BY nome");
+// verificar se o param 'id' existe e se não está passado vazio
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    $id_user = $_GET['id'];  
+    $WARNNING = "<span style='color: red;'>Pet atualizado!</span>";
+
+    $query = $conn->prepare("SELECT * FROM `pet` WHERE id = ?");
+    $query->bind_param("s", $id_user);
+
+    $query->execute();
+    echo print_r($query);
+} else {
+    $WARNNING = "<span style='color: green'>Pet não atualizado!</span>";
+}
 ?>
 
 <center>
@@ -23,25 +34,21 @@ $query = $conn->query("SELECT id, nome, especie, raca FROM pet ORDER BY nome");
 
     [<a href="index.html">Home🏠</a>]
     [<a href="consulta.php">Consultar🔍</a>]
-    [<a href="cadastro.php">Cadastrar✅</a>]
+    [< href="cadastro.php">Cadastrar✅</   a>]
 </div>
 <br>
 
-<div style="padding:18px">
+<!-- exibindo os dados -->
+<table width="60%" border="0" cellspacing="12px" cellpadding="16px">
+    <tr bgcolor="#DFDFDF" style="color: #090503; font-family: 'Poppins', cursive; font-size: 1.2rem">
+        <th>Nome</th>
+        <th>Espécie</th>
+        <th>Raça</th>
+    </tr>
 
-	<!-- verificando se existe dados -->
-	<?php if ($conn->affected_rows > 0) { ?>
-	<table width="100%" border="0" cellspacing="12px" cellpadding="16px">
-
-		<tr bgcolor="#DFDFDF" style="color: #090503; font-family: 'Poppins', cursive; font-size: 1.2rem">
-			<th>Nome</th>
-			<th>Espécie</th>
-			<th>Raça</th>
-			<th colspan="2">Actions</th>
-		</tr>
-
-		<!-- exibindo os dados -->
-		<?php while ($row = $query->fetch_assoc()): ?>
+    
+    <tr bgcolor='#f1f1f1'>
+    <?php while ($row = $query): ?>
 		<tr bgcolor='#f1f1f1'>
 			<td><?php echo $row['nome']; ?></td>
 			<td><?php echo $row['especie']; ?></td>
@@ -62,17 +69,5 @@ $query = $conn->query("SELECT id, nome, especie, raca FROM pet ORDER BY nome");
 			</th>
 		</tr>
 		<?php endwhile ?>
-		
-	</table>
-	<?php } else { 
-		// setando aviso
-		$WARNNING = "<span style='color: #A37E5A;font-size:1.2rem''>Não há pets cadastrados... 🐈</span>";
-		echo $WARNNING;	
-		echo "<br><br>";
-		echo "<img src='./public/image/anime-cat.gif' alt='Cat Gif' />";
-	} ?>
-	
-</div>
 
 </center>
-
