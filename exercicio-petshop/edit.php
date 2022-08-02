@@ -5,18 +5,15 @@ $WARNINNG = "";
 
 // conectar com o banco de dados
 $conn = new mysqli("127.0.0.1", "root", "", "projeto_petshop");
-
 if ($conn->connect_error) {
 	$ERROR = "<span style='color: red;''>Erro ".$conn->connect_error."</span>";
     echo $ERROR;
 }
 
-$id_user = 0;
-
 // verificar se o param 'id' existe e se não está passado vazio
+$id_pet = 0;
 if (isset($_GET['id']) && !empty($_GET['id'])) {
-    $id_user = $_GET['id'];  
-    $WARNNING = "<span style='color: red;'>Pet atualizado!</span>";
+    $id_pet = $_GET['id'];  
 } 
 
 // atualizar dados
@@ -25,17 +22,17 @@ if (isset($_POST['nome']) && !empty($_POST['nome'])) {
     $fEspecie = $_POST['especie'];
     $fRaca = $_POST['raca'];
 
-    $query = $conn->query("UPDATE `pet` SET `name` = '$fName', `especie` = '$fEspecie', `raca` = '$fRaca' WHERE `id` = '$id_user'");
-
-    header("Location: index.html");
+    $sql = $conn->query("UPDATE pet SET nome = '$fName', especie = '$fEspecie', raca = '$fRaca' WHERE id = '$id_pet'");
+    header("Location: consulta.php");
 }
 
-$query = $conn->query("SELECT * FROM `pet` WHERE id = $id_user");
+$sql = "SELECT * FROM pet WHERE id = '$id_pet'";
+$sql = $conn->query($sql);
 
 if ($conn->affected_rows > 0) {
-    $row = $query->fetch_assoc();
+    $row = $sql->fetch_assoc();
 } else {
-    header("Location: consulta.php");
+    header("Location: consulta.html");
 }
 ?>
 
@@ -52,8 +49,8 @@ if ($conn->affected_rows > 0) {
 <br>
 
 <!-- exibindo os dados -->
+<form method="post">
 <table width="60%" border="0" cellspacing="12px" cellpadding="16px">
-    <form method="get">
     <tr bgcolor="#DFDFDF" style="color: #090503; font-family: 'Poppins', cursive; font-size: 1.2rem">
         <th>
             <label for="nome">Nome</label>
@@ -103,7 +100,7 @@ if ($conn->affected_rows > 0) {
             </button>
         </td>
     </tr>
-    </form>
+    
 </table>
-
+</form>
 </center>
