@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Deleção de Cadastro de Pessoa</title>
+	<link rel="stylesheet" type="text/css" href="../estilo.css">
+
+</head>
+
+<body>
+
+	<nav>
+		<ul>
+			<li><a href="../index.html">Página Principal</a></li>
+			<li><a href="inspessoa.html">Inserir</a></li>
+			<li><a href="conspessoa.html">Consultar</a></li>
+			<li><a href="altpessoa.html">Alterar</a></li>
+			<li><a href="delpessoa.html">Deletar</a></li>
+		</ul>
+	</nav>
+
+	<br><br>
+	<h1>
+		<center>
+			Deleção de Dados
+		</center>
+	</h1>
+	<br><br>
+
+	<form action="../delpessoa.php" method="post">
+		<label for="fid"> Digite o ID para apagar: </label> <br>
+		<input type="text" id="fid" name="fid"><br><br>
+
+		<input type="submit" name="Apagar" value="Apagar">
+
+	</form>
+
+</body>
+
+</html>

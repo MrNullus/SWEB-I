@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cadastro de Pessoa</title>
+	<link rel="stylesheet" type="text/css" href="../estilo.css">
+</head>
+
+<body>
+	<nav>
+		<ul>
+			<li><a href="../index.html">Página Principal</a></li>
+			<li><a href="inspessoa.html">Inserir</a></li>
+			<li><a href="conspessoa.html">Consultar</a></li>
+			<li><a href="altpessoa.html">Alterar</a></li>
+			<li><a href="delpessoa.html">Deletar</a></li>
+		</ul>
+	</nav>
+
+	<br><br>
+	<h1>
+		<center>
+			Inclusão de Dados
+		</center>
+	</h1>
+	<br><br>
+
+	<form action="../inspessoa.php" method="post">
+		<label for="fnome"> Nome: </label> <br>
+		<input type="text" id="fnome" name="fnome"><br><br>
+
+		<label for="ftel"> Telefone: </label> <br>
+		<input type="text" id="ftel" name="ftel"><br><br>
+
+		<label for="femail"> Email: </label> <br>
+		<input type="text" id="femail" name="femail"><br><br>
+
+
+		<input type="submit" name="Enviar" value="Salvar">
+
+	</form>
+
+</body>
+
+</html>

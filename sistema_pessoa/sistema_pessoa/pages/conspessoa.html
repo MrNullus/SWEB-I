@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Consulta no Cadastro de Pessoa</title>
+	<link rel="stylesheet" type="text/css" href="../estilo.css">
+</head>
+
+<body>
+	<nav>
+		<ul>
+			<li><a href="../index.html">Página Principal</a></li>
+			<li><a href="inspessoa.html">Inserir</a></li>
+			<li><a href="conspessoa.html">Consultar</a></li>
+			<li><a href="altpessoa.html">Alterar</a></li>
+			<li><a href="delpessoa.html">Deletar</a></li>
+		</ul>
+	</nav>
+
+	<br><br>
+	<h1>
+		<center>
+			Consulta de Dados
+		</center>
+	</h1>
+	<br><br>
+
+	<h2>Por nome</h2>
+	<form action="../conspessoa.php" method="post">
+		<label for="fnome"> Nome: </label> <br>
+		<input type="text" id="fnome" name="fnome"><br><br>
+		<input type="submit" name="Pesquisar" value="Pesquisar">
+	</form>
+	<br>
+	<h2>Geral</h2>
+	<form action="conspessoa2.php" method="post">
+		<input type="submit" name="Pesquisar" value="Pesquisar">
+
+	</form>
+
+</body>
+
+</html>
